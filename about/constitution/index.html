@@ -1,8 +1,101 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    <style type="text/css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Republic of Metairie Homepage</title>
+  <link rel="icon" type="image/x-png" href="/files/coatofarms-2048.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Exo 2";
+      line-height: 1.6;
+    }
+
+    /* Navbar container */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px 20px;
+    }
+
+    /* Logo */
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      position:relative;
+      top:10;
+    }
+
+    /* Menu links */
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ddbd00; /* Tomato color on hover */
+    }
+
+    /* Mobile menu button */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+      }
+
+      .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+        margin: 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+  <style type="text/css">
         @import url(https://themes.googleusercontent.com/fonts/css?kit=M0po7uLhz4bYwZ7qo9BBO1gPVFMHemx2Kwb6QKHY-GHJaxjL1xr3K4ajWNGb9H0Fl2HbuSjzVjkh83RJSWrtQIFR-OAVCVUEhU_Ok9-j0P7KkGGY6PwRfCqtJ3Q_TD8p);
 
         ol.lst-kix_1jxhnuwhbsi0-4.start {
@@ -373,8 +466,21 @@
         }
     </style>
 </head>
+<body>
 
-<body class="c12 doc-content">
+  <nav>
+    
+    <a href="" class="logo"><img src="/files/flag-2048.jpg" width="64px"> Republic of Metairie</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/about/constitution">Constitution</a></li>
+    </ul>
+    <span class="menu-toggle">&#9776;</span>
+  </nav>
+
+  <main style="padding: 20px;">
     <p class="c11"><span class="c6 c9">The Constitution of the Sovereign Republic of Metairie</span></p>
     <p class="c0 c2"><span class="c6 c10"></span></p>
     <p class="c0"><span class="c6 c8">Preamble</span></p>
@@ -542,6 +648,17 @@
             large and stable enough to transition, the Republic will ratify the rest of this Constitution into effect.
             Articles I, III, IV, V, VI, VII, and VIII are in virtually full effect excepting the aforementioned changes
             in this section. </span></p>
-</body>
+  </main>
 
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
 </html>
